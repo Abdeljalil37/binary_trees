@@ -1,4 +1,4 @@
-#include "binary_tres.h"
+#include "binary_trees.h"
 
 /**
  * binary_tree_rotate_left - Left-rotates a binary tree.
@@ -19,6 +19,8 @@ binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
     tree->right = tmp;
     if (tmp != NULL)
         tmp->parent = tree;
+    tmp = tree->parent;
+    tree->parent = pivot;
 
     return (pivot);
 }
